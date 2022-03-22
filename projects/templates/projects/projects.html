@@ -1,5 +1,15 @@
 {% extends 'main.html' %}
 
 {% block content %}
+
+{% if number > 10 %}
     <h1>Projects page</h1>
-{% endblock content  %}
+{% endif %}
+
+<ul>
+    {% for project in projects %}
+        <li>Name:<a href="{% url 'project' project.id %}">{{project.title}}</a> ------- >Description:{{project.descriptions}} </li>
+    {% endfor %}
+</ul>
+
+{% endblock content  %} 
